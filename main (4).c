@@ -17,7 +17,7 @@ void append(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
         *head = newNode;
-        newNode->next = *head; // Making it circular
+        newNode->next = *head; 
         return;
     }
     struct Node* temp = *head;
@@ -25,7 +25,7 @@ void append(struct Node** head, int data) {
         temp = temp->next;
     }
     temp->next = newNode;
-    newNode->next = *head; // Connecting last node to head
+    newNode->next = *head; 
 }
 
 void makeCircular(struct Node** head) {
@@ -34,8 +34,7 @@ void makeCircular(struct Node** head) {
     while (temp->next != NULL) {
         temp = temp->next;
     }
-    temp->next = *head; // Connect last node to head
-}
+    temp->next = *head; 
 
 void printCircularList(struct Node* head) {
     if (head == NULL) return;
